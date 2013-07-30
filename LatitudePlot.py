@@ -16,7 +16,7 @@ def GetKmlFiles():
     for dirname, dirnames, filenames in os.walk('.'):
         for filename in filenames:
             sp = filename.split('.')
-            if  sp[len(sp)-1]== "kml":
+            if  sp[len(sp)-1]== "kml": #locate kml files
                 print "Reading kml file " + filename
                 KmlData.append(ReadKmlFile(dirname, filename))
     return KmlData
@@ -51,12 +51,13 @@ def DrawMapData(KmlData,InputImage, OutputImage, itop, ibottom, ileft, iright,xn
     cnt =0
     for KmlD in KmlData:
         for d in range(len(KmlD[0])-1):
+            #Get points x and y coordinates and draw line
             x1=(LongToX(KmlD[0][d],ileft,iright,im.size[0]))+xnudge
             y1=(LatToY(KmlD[1][d],itop,ibottom,im.size[1]))+ynudge
             x2=(LongToX(KmlD[0][d+1],ileft,iright,im.size[0]))+xnudge
             y2=(LatToY(KmlD[1][d+1],itop,ibottom,im.size[1]))+ynudge
-            #print x1,y1,x2,y2,EuclidDistance(x1,y1,x2,y2)
-            if(EuclidDistance(x1,y1,x2,y2) < 80):
+            if(EuclidDistance(x1,y1,x2,y2) < 10000):
+                #setting this around 80 works okay. Attempts to remove some noise  
                 draw.line((x1,y1, x2,y2), fill=255)
             cnt+=1
             if cnt % 10000 ==0:
