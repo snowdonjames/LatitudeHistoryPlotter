@@ -9,6 +9,8 @@ This script is intended for use with latitude data obtained from [https://www.go
 
 ## Usage
 
+This script requires the Python Imaging Library (PIL) to run - please obtain from www.pythonware.com/products/pil/
+
 Simply run the LatitudePlot.py file inside of a directory containing:
 
 - All kml files to be rendered
