@@ -19,6 +19,8 @@ Simply run the LatitudePlot.py file inside of a directory containing:
 
 Upon completion, an output file should be created in the directory named LatitudeData.png
 
+Examples of use are at [my personal website](http://snowdonjames.com/rendering-long-term-location-data-from-google-latitude/)
+
 ## Example csv format:
 
 For use with http://i.imgur.com/7pZFD7s.jpg (Southern United Kingdom)
@@ -27,7 +29,7 @@ For use with http://i.imgur.com/7pZFD7s.jpg (Southern United Kingdom)
     
 or
 
-For use with http://i.imgur.com/CjyohmR.jpg (whole United Kingdom)
+for use with http://i.imgur.com/CjyohmR.jpg (whole United Kingdom)
 
     CjyohmR.jpg,59.925110, 48.892321, -11.096191, 1.944580,-2,10
 
