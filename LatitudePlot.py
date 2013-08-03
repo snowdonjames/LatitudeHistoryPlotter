@@ -93,6 +93,8 @@ def ParseImageFile():
     (optional) <y value nudge>"""
     with open('ImageData.csv', 'r') as f:
         read_data = f.read().split(',')
+    while 5 <= len(read_data) < 7:
+        read_data.append(0)
     ReturnData = [0]*7
     ReturnData[0]=read_data[0]
     for i in range(1,7):
